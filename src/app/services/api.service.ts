@@ -6,6 +6,7 @@ import { donwloadImage } from '../interfaces/downloadImage';
 import { LoginUser } from '../interfaces/loginUser';
 import { RegisterUser } from '../interfaces/registerUser';
 import { UtilsService } from './utils.service';
+import { RegisterReceita } from '../interfaces/registerReceita';
 
 @Injectable({
   providedIn: 'root'
@@ -81,5 +82,14 @@ export class ApiService {
         return throwError(() => err)
       })
     )
+  }
+
+  registerRevenues(revenue: any): Observable<RegisterReceita> {
+    return this.httpClient.post<RegisterReceita>(enviremonent.BASE_URL + '/auth/revenues', revenue)
+      .pipe(
+        catchError((err) => {
+          return throwError(() => err)
+        })
+      )
   }
 }
