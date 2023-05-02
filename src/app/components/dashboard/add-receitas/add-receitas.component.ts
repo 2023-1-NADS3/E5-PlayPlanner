@@ -156,8 +156,6 @@ export class AddReceitasComponent implements OnInit, OnDestroy {
           }
         }
       }
-      debugger;
-      console.log(this.getValueControl(this.form, 'fixedRevenue'))
       if(this.getValueControl(this.form, 'fixedRevenue')) {
         for(let i=0; i< this.months.length; i++) {
           dateEntry = new Date(dateReplace[0], this.searchIndexMonths(this.months[i]), dateReplace[2])
@@ -182,7 +180,6 @@ export class AddReceitasComponent implements OnInit, OnDestroy {
         }
       }
 
-      console.log('olhando o check do fixedRevenue', this.getValueControl(this.form, 'fixedRevenue'))
       this.apiService.registerRevenues(payload)
         .subscribe((res: RegisterReceita) => {
           if(res) {

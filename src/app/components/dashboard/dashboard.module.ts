@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
@@ -17,7 +17,21 @@ import { CardViewComponent } from './card-view/card-view.component';
 import { AddReceitasComponent } from './add-receitas/add-receitas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MonthsReceitasComponent } from './months-receitas/months-receitas.component';
+import { CURRENCY_MASK_CONFIG, CurrencyMaskModule } from 'ng2-currency-mask';
+import  localePt from '@angular/common/locales/pt'
+import { ShortenerPipe } from 'src/app/shared/pipes/shortener.pipe';
 
+registerLocaleData(localePt, 'pt')
+
+export const CustomCurrencyMaskConfig = {
+  align: 'left',
+  allowNegative: true,
+  decimal: ',',
+  precision: 2,
+  prefix: 'R$ ',
+  suffix: '',
+  thousands: '.',
+}
 
 @NgModule({
   declarations: [
@@ -33,14 +47,26 @@ import { MonthsReceitasComponent } from './months-receitas/months-receitas.compo
     ImgProfileComponent, 
     CardViewComponent,
     AddReceitasComponent,
-    MonthsReceitasComponent
+    MonthsReceitasComponent,
+    ShortenerPipe
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedMaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CurrencyMaskModule
+  ],
+  providers: [
+    {
+      provide: CURRENCY_MASK_CONFIG,
+      useValue: CustomCurrencyMaskConfig
+    },
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt'
+    }
   ]
 })
 export class DashboardModule { }
