@@ -1,0 +1,14 @@
+.negative {
+  background-color: red;
+  color: #fff;
+}
+.positive {
+  background-color: green;
+  color: #fff;
+}
+
+.card {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+-moz-box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+box-shadow: 10px 10px 5px 0px rgba(204,204,204,1);
+}

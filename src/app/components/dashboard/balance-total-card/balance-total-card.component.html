@@ -1,0 +1,8 @@
+<div *ngIf="showBalanceTotal">
+  <div class="card text-center border-3 mb-3 rounded-4" 
+    [class.negative]="hasNegative"
+    [class.positive]="hasPositive">
+    <p>{{showBalanceTotal.title}}</p>
+    <h1>{{showBalanceTotal.value | currency: "BRL": "symbol": "1.2-2"}}</h1>
+</div>
+</div>

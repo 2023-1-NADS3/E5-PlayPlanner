@@ -1,0 +1,43 @@
+.login {
+  background-color: rgba($color: #FFD152, $alpha: 1);
+  height: 100vh;
+}
+
+.color {
+  background-color: rgba($color: white, $alpha: 1);
+}
+
+.color2{
+  background-color: rgba($color: #FFD152, $alpha: 1);
+  color: black;
+
+}
+.color3{
+  background-color: #FFC629;
+}
+
+input::placeholder {
+  color: #FFC629;
+}
+
+.border1{
+  border-color: #FFC629;
+}
+
+.form-card{
+  -webkit-box-shadow: 8px 8px 5px 0px rgba(138,101,0,1);
+  -moz-box-shadow: 8px 8px 5px 0px rgba(138,101,0,1);
+  box-shadow: 8px 8px 5px 0px rgba(138,101,0,1);
+}
+
+hr{
+  color: #FFC629;
+}
+
+.text-size{
+  font-size: xx-large;
+}
+
+button {
+  width: 80%;
+}

@@ -1,0 +1,6 @@
+<div *ngIf="debtsTotal">
+  <div class="card border text-center border-3 mb-3 rounded-4">
+    <p class="valueTitle">{{debtsTotal.title}}</p>
+    <h1 class="valueTotal">{{debtsTotal.value | currency : "BRL": "symbol": "1.2-2"}}</h1>
+  </div>
+</div>
